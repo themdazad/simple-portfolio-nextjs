@@ -1,14 +1,10 @@
-export const Nav=()=>{
+import {Github, Linkedin} from "lucide-react"
+export const Navbar=()=>{
 	return (
-    <nav className="bg-neutral-200 rounded-full max-w-min m-auto sticky top-6 ">
-      <ul className="flex gap-6 px-6 py-4 text-lg font-semibold text-nowrap">
-        {["Skils", "Projects", "Contact me"].map((item) => {
-          return (
-            <li key={item} className="gap-6">
-              {item}
-            </li>
-          );
-        })}
+    <nav className="flex justify-end z-12 bg-neutral-100">
+      <ul className="flex max-w-min rounded-full p-10 gap-6">
+        <Linkedin />
+        <Github />
       </ul>
     </nav>
   );
