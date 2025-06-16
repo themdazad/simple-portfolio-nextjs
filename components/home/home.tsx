@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { Dot, Eye, Github, GithubIcon } from "lucide-react";
+import { ChartArea, Dot, Eye, Github, GithubIcon, Mail, PhoneIcon } from "lucide-react";
 import { ProjectsData } from "@/assets/data/projects-data";
 import Link from "next/link";
 import "./home-style.css"
@@ -8,7 +8,7 @@ import "./home-style.css"
 
 export const Hero = () => {
   return (
-    <div className="bg-stone-100 w-full min-h-[100dvh] rounded-b-[4rem]">
+    <div className="bg-white w-full min-h-[100dvh]">
       <section className="max-w-screen-2xl m-auto px-4 grid justify-center gap-12 items-center py-32">
         <div className="relative grid justify-center ">
           <Image
@@ -37,7 +37,7 @@ export const Hero = () => {
           </p>
           {/* CTA Button  */}
           <Button
-            className="hover:shadow-xl rounded-3xl transition-all duration-300"
+            className="cursor-pointer p-6 hover:shadow-xl bg-neutral-800 text-white rounded-3xl transition-all duration-300"
             variant="outline"
           >
             Contact me
@@ -50,7 +50,7 @@ export const Hero = () => {
 
 export const Skills = () => {
   return (
-    <section className="rounded-b-[4rem] py-10">
+    <section className="py-10 lg:py-32">
       <div className="max-w-screen-2xl m-auto px-4 flex flex-col gap-6 justify-center items-center space-y-6">
         {/* page title  */}
         <span className=" bg-stone-800 backdrop-blur-md inline-flex text-stone-100 p-2 px-3 pr-6 rounded-full text-nowrap">
@@ -83,7 +83,7 @@ export const Skills = () => {
             return (
               <div
                 key={value._id}
-                className="grid place-content-center z-9 bg-white p-6 space-y-6 rounded-3xl h-full w-full transition-all duration-300"
+                className="grid place-content-center z-9 p-6 space-y-6 h-full w-full transition-all duration-300"
               >
                 <div className="space-y-4 text-center ">
                   <h1 className="text-xl font-extrabold">{value.title}</h1>
@@ -91,7 +91,7 @@ export const Skills = () => {
                 <div className="flex gap-6">{value.icons.map((icon) => {
                   return (
                     <Image
-					className="object-contain bg-white h-16 w-16"
+                      className="object-contain bg-white h-16 w-16"
                       key={icon}
                       src={icon}
                       height={80}
@@ -112,14 +112,14 @@ export const Skills = () => {
 
 export const Projects = () => {
   return (
-    <section className="w-full bg-stone-100 rounded-t-[4rem] gap-6 items-center py-10 ">
+    <section className=" mx-2 bg-neutral-300 rounded-[4rem] gap-6 items-center py-10 ">
       <div className="max-w-screen-2xl m-auto px-4 space-y-10 w-full">
         {/* 1.Page title  */}
         <span className="sticky top-6 bg-stone-800 backdrop-blur-md inline-flex text-stone-100 p-2 px-3 pr-6 rounded-full text-nowrap">
           <Dot />
           WORKS/PROJECTS
         </span>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 gap-y-10 w-full">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 gap-y-6 w-full">
           {/* 2.Project card  */}
           {ProjectsData.map((item) => {
             return (
@@ -179,3 +179,33 @@ export const Projects = () => {
     </section>
   );
 };
+
+export const HireMe=()=>{
+  return (
+    <section className="grid justify-center text-center font-extrabold space-y-12 py-32">
+      <h1 className="text-6xl leading-16">
+        Hire me for you next <br /> projects
+      </h1>
+      <div className="buttons  space-x-4">
+        <a href="mailto:collezian@gmail.com" target="_blank">
+          <Button
+            className="cursor-pointer p-6 hover:shadow-xl bg-neutral-800 text-white rounded-3xl transition-all duration-300"
+            variant="outline"
+          >
+            <Mail />
+            collezian@gmail.com
+          </Button>
+        </a>
+        <a href="phone:+91-9110172886" target="_blank">
+          <Button
+            className="cursor-pointer p-6 hover:shadow-xl rounded-3xl transition-all duration-300"
+            variant="outline"
+          >
+            <PhoneIcon />
+            Whatsapp
+          </Button>
+        </a>
+      </div>
+    </section>
+  );
+}
