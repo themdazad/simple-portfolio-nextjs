@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { Dot, Eye, Github, GithubIcon, Mail, PhoneIcon } from "lucide-react";
+import { Dot, Eye, Github, Mail, PhoneIcon } from "lucide-react";
 import { ProjectsData } from "@/assets/data/projects-data";
 import Link from "next/link";
 import { Navbar } from "../navigation";
