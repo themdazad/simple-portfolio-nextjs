@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { ChartArea, Dot, Eye, Github, GithubIcon, Mail, PhoneIcon } from "lucide-react";
+import {  Dot, Eye, Github, GithubIcon, Mail, PhoneIcon } from "lucide-react";
 import { ProjectsData } from "@/assets/data/projects-data";
 import Link from "next/link";
 import "./home-style.css"
@@ -8,42 +8,42 @@ import "./home-style.css"
 
 export const Hero = () => {
   return (
-    <div className="bg-white w-full min-h-[100dvh]">
-      <section className="max-w-screen-2xl m-auto px-4 grid justify-center gap-12 items-center py-32">
-        <div className="relative grid justify-center ">
-          <Image
-            className=" rounded-full hover:shadow-xl transition-all duration-300"
-            src="/images/azad.jpg"
-            alt={"azad-ghibli-art-image"}
-            width={200}
-            height={400}
-          />
-          <span className="absolute left-[45%] top-[80%] -rotate-12 bg-stone-800/20 hover:bg-stone-800/40 border-1 border-stone-800 backdrop-blur-md hover:shadow-2xl cursor-github inline-flex gap-2 text-sm text-stone-100 tracking-wider p-2 px-3 pr-6 rounded-full text-nowrap transition-all duration-300">
-            <Github />
-            @themdazad
-          </span>
-        </div>
-        <div className=" space-y-10 text-center">
-          {/* CTA  */}
-          <h1 className="text-6xl font-extrabold">
-            Hi,
-            <br /> I&apos;m designer & developer
-          </h1>
-          {/* Description   */}
-          <p>
-            I have 3+ years of experience in ui designing and frontend
-            development working on useful and mindful product together with
-            college and remote clients.
-          </p>
-          {/* CTA Button  */}
-          <Button
-            className="cursor-pointer p-6 hover:shadow-xl bg-neutral-800 text-white rounded-3xl transition-all duration-300"
-            variant="outline"
-          >
-            Contact me
-          </Button>
-        </div>
-      </section>
+    <div className="bg-white w-full ">
+        <section className="max-w-screen-2xl m-auto px-4 grid justify-center gap-12 items-center py-32">
+          <div className="relative grid justify-center ">
+            <Image
+              className=" rounded-full hover:shadow-xl transition-all duration-300"
+              src="/images/azad.jpg"
+              alt={"azad-ghibli-art-image"}
+              width={200}
+              height={400}
+            />
+            <span className="absolute left-[45%] top-[80%] -rotate-12 bg-stone-800/20 hover:bg-stone-800/40 border-1 border-stone-800 backdrop-blur-md hover:shadow-2xl cursor-github inline-flex gap-2 text-sm text-stone-100 tracking-wider p-2 px-3 pr-6 rounded-full text-nowrap transition-all duration-300">
+              <Github />
+              @themdazad
+            </span>
+          </div>
+          <div className=" space-y-10 text-center">
+            {/* CTA  */}
+            <h1 className="text-5xl md:text-7xl d:\Developments\Major Web Project 2025\Training and Placement Cell Full Stack 2025\Frontend\src\components\ui\GradientTracking.jsx font-extrabold">
+              Hi,
+              <br /> I&apos;m designer & developer
+            </h1>
+            {/* Description   */}
+            <p>
+              I have 2+ years of experience in ui designing and frontend
+              development working on useful and mindful product together with
+              startups and remote clients.
+            </p>
+            {/* CTA Button  */}
+            <Button
+              className="cursor-pointer p-6 hover:shadow-xl bg-neutral-800 text-white rounded-3xl transition-all duration-300"
+              variant="outline"
+            >
+              LinkedIn
+            </Button>
+          </div>
+        </section>
     </div>
   );
 };
@@ -112,7 +112,7 @@ export const Skills = () => {
 
 export const Projects = () => {
   return (
-    <section className=" mx-2 bg-neutral-300 rounded-[4rem] gap-6 items-center py-10 ">
+    <section className=" mx-[5%] bg-neutral-300 rounded-4xl md:rounded-[4rem] gap-6 items-center py-12 ">
       <div className="max-w-screen-2xl m-auto px-4 space-y-10 w-full">
         {/* 1.Page title  */}
         <span className="sticky top-6 bg-stone-800 backdrop-blur-md inline-flex text-stone-100 p-2 px-3 pr-6 rounded-full text-nowrap">
@@ -180,11 +180,67 @@ export const Projects = () => {
   );
 };
 
+export const Educations = () => {
+  return (
+    <section className=" mx-[5%] bg-neutral-300 rounded-4xl md:rounded-[4rem] gap-6 items-center py-12 ">
+      <div className="max-w-screen-2xl m-auto px-4 space-y-10 w-full">
+        {/* 1.Page title  */}
+        <span className="sticky top-6 bg-stone-800 backdrop-blur-md inline-flex text-stone-100 p-2 px-3 pr-6 rounded-full text-nowrap">
+          <Dot /> EDUCATIONS
+        </span>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 gap-y-6 w-full">
+          {/* 2.Education details  */}
+          {[
+            {
+              college: "Government Engineering College, Siwan ",
+              duration: "2022-26",
+              degree: "Btech",
+              branch: "Electrical Engineering",
+              board: "BEU Patna",
+              marks: "CGPA 7.22/10",
+            },
+            {
+              college: "Government Polytechnic College, Chhapra ",
+              duration: "2019-22",
+              degree: "Diploma",
+              branch: "Computer Science and Engineering",
+              board: "SBTE Bihar",
+              marks: "CGPA 8.48/10",
+            },
+            {
+              college: "Bihar School Examination Board, Patna ",
+              duration: "2017-19",
+              degree: "Intermediate",
+              branch: "Science (PCM)",
+              board: "",
+              marks: "Marks 76.4%",
+            },
+          ].map((value, i) => {
+            return (
+              <div key={i} className="btech max-sm:text-center">
+                <b>
+                  {value.college}- ({value.duration})
+                </b>
+                <br />
+                <i>
+                  {value.degree} in {value.branch} - {value.board}
+                </i>{" "}
+                <br />
+                <strong>{value.marks}</strong>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 export const HireMe=()=>{
   return (
     <section className="grid justify-center text-center font-extrabold space-y-12 py-32">
-      <h1 className="text-6xl leading-16">
-        Hire me for you next <br /> projects
+      <h1 className="text-5xl md:text-7xl ">
+        Hire me <br /> for you next <br /> projects
       </h1>
       <div className="buttons  space-x-4">
         <a href="mailto:collezian@gmail.com" target="_blank">

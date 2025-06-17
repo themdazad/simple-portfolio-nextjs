@@ -1,6 +1,5 @@
 "use client";
-
-import {Hero, Skills, Projects, HireMe} from "@/components/home/home"
+import {Hero,Skills,Projects,Educations, HireMe} from "@/components/home/home";
 
 export default function Home() {
   return (
@@ -8,6 +7,7 @@ export default function Home() {
       <Hero />
       <Projects />
       <Skills />
+      <Educations/>
       <HireMe/>
     </main>
   );
